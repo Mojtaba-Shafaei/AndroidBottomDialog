@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="textPrimaryColor">#212121</color>
+    <color name="textSecondaryColor">#767676</color>
+    <color name="hint_disabledTextColor">#9f9f9f</color>
+    <color name="dividerColor">#1F000000</color>
+
+    <color name="colorAccent">#039BE5</color>
+
+    <color name="disabledButtonTextColor">#BDBDBD</color>
+    <color name="disabledButtonBackgroundColor">#e0e0e0</color><!-- 26% #000-->
+</resources>
