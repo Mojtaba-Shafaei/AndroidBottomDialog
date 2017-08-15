@@ -12,9 +12,17 @@ All parameters are customizable.
 - MIN-SDK Version = 15
 
 ### **Install**
-	dependencies {
-	        compile 'com.github.Mojtaba-Shafaei:AndroidBottomDialog:v1.0.0'
-	}
+    allprojects {
+        repositories {
+            ...
+            maven { url 'https://jitpack.io' }
+        }
+    }
+
+    dependencies {
+            compile 'com.github.Mojtaba-Shafaei:AndroidBottomDialog:1.0.0'
+    }
+
 
 
 [![](https://jitpack.io/v/Mojtaba-Shafaei/AndroidBottomDialog.svg)](https://jitpack.io/#Mojtaba-Shafaei/AndroidBottomDialog)
