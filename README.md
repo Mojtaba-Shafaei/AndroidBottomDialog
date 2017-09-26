@@ -5,11 +5,9 @@ It Supports LTR/RTL directions.
 All parameters are customizable.
 
 
-## **Version**
-1.0.0
 ### **Requirements**
 
-- MIN-SDK Version = 15
+- MIN-SDK Version = 14
 
 ### **Install**
     allprojects {
@@ -20,7 +18,7 @@ All parameters are customizable.
     }
 
     dependencies {
-            compile 'com.github.Mojtaba-Shafaei:AndroidBottomDialog:1.0.0'
+            compile 'com.github.Mojtaba-Shafaei:AndroidBottomDialog:last-version'
     }
 
 

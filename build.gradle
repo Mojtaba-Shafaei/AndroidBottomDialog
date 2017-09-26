@@ -6,7 +6,7 @@ buildscript {
         maven { url "https://jitpack.io" }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.0.0-alpha9'
+        classpath 'com.android.tools.build:gradle:3.0.0-beta6'
         classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -26,8 +26,9 @@ task clean(type: Delete) {
 ext {
     compileSdkVersion = 26 as int
     buildToolsVersion = "26.0.1" as String
+    supportVersion = "26.1.0" as String
     minSdkVersion = 14 as int
     targetSdkVersion = 26 as int
-    versionCode = 20 as int
-    versionName = "1.0.7" as String
+    versionCode = 21 as int
+    versionName = "1.0.8" as String
 }
