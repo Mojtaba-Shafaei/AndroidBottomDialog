@@ -29,6 +29,6 @@ ext {
     supportVersion = "26.1.0" as String
     minSdkVersion = 14 as int
     targetSdkVersion = 26 as int
-    versionCode = 21 as int
-    versionName = "1.0.8" as String
+    versionCode = 22 as int
+    versionName = "1.0.9" as String
 }

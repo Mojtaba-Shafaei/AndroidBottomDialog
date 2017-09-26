@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-import com.mojtaba_shafaei.android.library.BottomDialog;
+import com.mojtaba_shafaei.android.androidBottomDialog.BottomDialog;
 
 public class MainActivity extends AppCompatActivity {
 

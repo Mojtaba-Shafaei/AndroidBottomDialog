@@ -61,12 +61,13 @@
         android:layout_marginRight="8dp"
         android:layout_marginTop="32dp"
         android:background="@drawable/button_background_blue"
-        android:minWidth="120dp"
-        android:paddingLeft="8dp"
-        android:paddingRight="8dp"
+        android:minWidth="88dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
         android:text="positive"
         android:textAllCaps="true"
-        android:textColor="#FFF" />
+        android:textColor="#FFF"
+        android:textSize="14sp" />
 
     <Button
         android:id="@+id/btn_cancel"
@@ -78,9 +79,9 @@
         android:layout_marginRight="8dp"
         android:layout_toLeftOf="@id/btn_positive"
         android:background="@android:color/transparent"
-        android:minWidth="100dp"
-        android:paddingLeft="8dp"
-        android:paddingRight="8dp"
+        android:minWidth="88dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
         android:text="Negative"
         android:textAllCaps="true"
         android:textColor="@color/colorAccent"

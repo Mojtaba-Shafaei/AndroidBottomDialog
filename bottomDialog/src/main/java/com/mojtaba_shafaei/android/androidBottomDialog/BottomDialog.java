@@ -1,4 +1,4 @@
-package com.mojtaba_shafaei.android.library;
+package com.mojtaba_shafaei.android.androidBottomDialog;
 
 import android.content.DialogInterface;
 import android.graphics.Typeface;
@@ -31,7 +31,7 @@ import java.lang.annotation.RetentionPolicy;
  * Created by mojtaba on 8/15/17.
  */
 
-public class BottomDialog extends android.support.design.widget.BottomSheetDialogFragment{
+public final class BottomDialog extends android.support.design.widget.BottomSheetDialogFragment {
     private Builder builder;
     private final String TAG = "BottomDialog";
     private boolean isDismissed = false;
