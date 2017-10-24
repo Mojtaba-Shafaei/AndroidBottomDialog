@@ -32,11 +32,11 @@ public class MainActivity extends AppCompatActivity {
                         .withCancelable(true)
                         .withTitle("هشدار", typeface)
                         .withIcon(R.drawable.ic_error_outline_red_700_24dp)
-                        .withContent("آیا کاربر ... را حذف میکنید؟")
+                        .withContent("آیا کاربر … را حذف میکنید؟")
                         .withHiddenNegativeButton(false)
                         .withNegativeText("انصراف")
                         .withPositiveText("بله.حذف میکنم.")
-                        .withPositiveBackgroundType(BottomDialog.GREEN)
+                        .withPositiveBackgroundType(BottomDialog.GREY)
                         .withNegativeBackgroundType(BottomDialog.TRANSPARENT)
                         .withDefaultTypeface(typeface)
                         .build()
@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
                         .withTitle("Warning", typeface, R.dimen.titleTextSize)
                         .withContent("Do you remove this ... ?", typeface, R.dimen.contentTextSize)
 
-                        .withPositiveText("Yes.Remove it.", R.color.textPrimaryColor)
+                        .withPositiveText("Yes.Remove it.", android.R.color.white)
                         .withPositiveBackgroundType(BottomDialog.BLUE)
 
                         .withNegativeText("Cancel", R.color.textSecondaryColor)

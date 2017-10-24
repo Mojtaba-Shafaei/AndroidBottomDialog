@@ -1,12 +1,12 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
     repositories {
-        maven { url 'https://dl.google.com/dl/android/maven2/' }
         jcenter()
+        maven { url 'https://maven.google.com' }
         maven { url "https://jitpack.io" }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.0.0-beta6'
+        classpath 'com.android.tools.build:gradle:3.0.0-rc1'
         classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -14,8 +14,8 @@ buildscript {
 }
 allprojects {
     repositories {
-        maven { url 'https://dl.google.com/dl/android/maven2/' }
         jcenter()
+        maven { url 'https://maven.google.com' }
         maven { url "https://jitpack.io" }
     }
 }
@@ -25,10 +25,10 @@ task clean(type: Delete) {
 
 ext {
     compileSdkVersion = 26 as int
-    buildToolsVersion = "26.0.1" as String
+    buildToolsVersion = "26.0.2" as String
     supportVersion = "26.1.0" as String
     minSdkVersion = 14 as int
     targetSdkVersion = 26 as int
-    versionCode = 22 as int
-    versionName = "1.0.9" as String
+    versionCode = 23 as int
+    versionName = "1.0.10" as String
 }

@@ -96,7 +96,7 @@ public final class BottomDialog extends android.support.design.widget.BottomShee
                 } else {
                     icon.setVisibility(View.VISIBLE);
                     if (builder.iconResId != null) {
-                        icon.setImageResource(builder.iconResId);
+                        icon.setImageDrawable(ContextCompat.getDrawable(getContext(), builder.iconResId));
                     } else if (builder.icon != null) {
                         icon.setImageDrawable(builder.icon);
                     }
