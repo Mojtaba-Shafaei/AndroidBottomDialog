@@ -33,7 +33,7 @@
             android:layout_toLeftOf="@+id/icon"
             android:gravity="right"
             android:text="تایتل"
-            android:textColor="@color/textPrimaryColor"
+            android:textColor="@color/bottom_dialog_textPrimaryColor"
             android:textSize="20sp" />
     </RelativeLayout>
 
@@ -48,7 +48,7 @@
         android:layout_marginTop="20dp"
         android:gravity="right"
         android:text="content"
-        android:textColor="@color/textPrimaryColor"
+        android:textColor="@color/bottom_dialog_textPrimaryColor"
         android:textSize="16sp" />
 
     <android.support.v7.widget.AppCompatButton
@@ -59,7 +59,7 @@
         android:layout_below="@android:id/message"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="32dp"
-        android:background="@drawable/button_background_blue"
+        android:background="@drawable/bottom_dialog_button_background_blue"
         android:gravity="center"
         android:minWidth="88dp"
         android:paddingLeft="16dp"
@@ -85,6 +85,6 @@
         android:paddingRight="16dp"
         android:text="Negative"
         android:textAllCaps="false"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/bottom_dialog_colorAccent"
         android:textSize="14sp" />
 </RelativeLayout>

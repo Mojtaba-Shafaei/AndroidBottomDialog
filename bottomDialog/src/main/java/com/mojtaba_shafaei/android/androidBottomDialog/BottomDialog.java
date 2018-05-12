@@ -207,32 +207,32 @@ public final class BottomDialog extends android.support.design.widget.BottomShee
     super.onActivityCreated(arg0);
     Window window = getDialog().getWindow();
     if (window != null) {
-      window.setWindowAnimations(R.style.DialogAnimation);
+      window.setWindowAnimations(R.style.bottom_dialog_DialogAnimation);
     }
   }
 
   private int getResourceFor(Integer type) {
     switch (type) {
       case TRANSPARENT:
-        return R.drawable.button_background_transparent;
+        return R.drawable.bottom_dialog_button_background_transparent;
 
       case BLUE:
-        return R.drawable.button_background_blue;
+        return R.drawable.bottom_dialog_button_background_blue;
 
       case GREY:
-        return R.drawable.button_background_gray;
+        return R.drawable.bottom_dialog_button_background_gray;
 
       case GREEN:
-        return R.drawable.button_background_green;
+        return R.drawable.bottom_dialog_button_background_green;
 
       case ORANGE:
-        return R.drawable.button_background_orange;
+        return R.drawable.bottom_dialog_button_background_orange;
 
       case RED:
-        return R.drawable.button_background_red;
+        return R.drawable.bottom_dialog_button_background_red;
 
       default:
-        return R.drawable.button_background_blue;
+        return R.drawable.bottom_dialog_button_background_blue;
     }
   }
 

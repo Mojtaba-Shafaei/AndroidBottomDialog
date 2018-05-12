@@ -27,6 +27,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="version"
-        android:textColor="@color/textSecondaryColor"
+        android:textColor="@color/bottom_dialog_textSecondaryColor"
         android:textSize="14sp" />
 </LinearLayout>

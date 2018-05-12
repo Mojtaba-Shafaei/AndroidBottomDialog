@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
                 .withPositiveText("Yes.Remove it.", android.R.color.white)
                 .withPositiveBackgroundType(BottomDialog.BLUE)
 
-                .withNegativeText("Cancel", R.color.textSecondaryColor)
+                .withNegativeText("Cancel", R.color.bottom_dialog_textSecondaryColor)
                 .withNegativeBackgroundType(BottomDialog.TRANSPARENT)
                 .build()
                 .show(MainActivity.this);

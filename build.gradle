@@ -2,9 +2,9 @@
 buildscript {
     repositories {
         jcenter()
+        google()
         maven { url 'https://maven.google.com' }
         maven { url "https://jitpack.io" }
-        google()
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.1.2'
@@ -16,9 +16,9 @@ buildscript {
 allprojects {
     repositories {
         jcenter()
+        google()
         maven { url 'https://maven.google.com' }
         maven { url "https://jitpack.io" }
-        google()
     }
 }
 task clean(type: Delete) {
@@ -29,8 +29,8 @@ ext {
     compileSdkVersion = 27 as int
     buildToolsVersion = "27.0.3" as String
     supportVersion = "27.1.1" as String
-    minSdkVersion = 14 as int
-    targetSdkVersion = 27 as int
+    minSdk = 17 as int
+    targetSdk = 27 as int
     versionCode = 23 as int
     versionName = "1.0.10" as String
 }
