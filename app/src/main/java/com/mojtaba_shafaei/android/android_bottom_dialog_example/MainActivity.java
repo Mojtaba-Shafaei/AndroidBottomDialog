@@ -29,7 +29,8 @@ public class MainActivity extends AppCompatActivity {
         .setOnClickListener(view -> {
           try {
 //            SpannableString spannableString = new SpannableString("آیا کاربر … را حذف میکنید؟");
-            SpannableString spannableString = new SpannableString("Do you want to delete user?");
+            SpannableString spannableString = new SpannableString(
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ac tincidunt vitae semper quis lectus nulla. Massa sapien faucibus et molestie ac feugiat sed lectus. Volutpat ac tincidunt vitae semper quis lectus nulla at. Nulla malesuada pellentesque elit eget gravida cum sociis natoque penatibus.");
             spannableString
                 .setSpan(new CustomTypefaceSpan(typeface), 0, 5, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
             spannableString.setSpan(new ForegroundColorSpan(Color.RED), 0, 7,

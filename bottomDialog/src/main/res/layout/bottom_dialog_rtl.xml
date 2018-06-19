@@ -1,90 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:paddingTop="24dp"
+  android:paddingBottom="16dp"
+  android:background="#FFF">
+
+  <RelativeLayout
+    android:id="@+id/headerLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#FFF"
-    android:paddingBottom="16dp"
-    android:paddingTop="24dp">
+    android:layout_alignParentTop="true">
 
-    <RelativeLayout
-        android:id="@+id/headerLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true">
-
-        <android.support.v7.widget.AppCompatImageView
-            android:id="@+id/icon"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="24dp"
-            android:src="@drawable/ic_android_dark"
-            android:visibility="visible" />
-
-        <android.support.v7.widget.AppCompatTextView
-            android:id="@android:id/title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="24dp"
-            android:layout_marginRight="24dp"
-            android:layout_toLeftOf="@+id/icon"
-            android:gravity="right"
-            android:text="تایتل"
-            android:textColor="@color/bottom_dialog_textPrimaryColor"
-            android:textSize="20sp" />
-    </RelativeLayout>
+    <android.support.v7.widget.AppCompatImageView
+      android:id="@+id/icon"
+      android:layout_width="40dp"
+      android:layout_height="40dp"
+      android:layout_marginLeft="8dp"
+      android:layout_marginRight="24dp"
+      android:layout_alignParentRight="true"
+      android:layout_centerVertical="true"
+      android:src="@drawable/ic_android_dark"
+      android:visibility="visible"/>
 
     <android.support.v7.widget.AppCompatTextView
-        android:id="@android:id/message"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/headerLayout"
-        android:layout_marginLeft="24dp"
-        android:layout_marginRight="24dp"
-        android:layout_marginTop="20dp"
-        android:gravity="right"
-        android:text="content"
-        android:textColor="@color/bottom_dialog_textPrimaryColor"
-        android:textSize="16sp" />
+      android:id="@android:id/title"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="24dp"
+      android:layout_marginRight="24dp"
+      android:layout_centerVertical="true"
+      android:layout_toLeftOf="@+id/icon"
+      android:ellipsize="end"
+      android:gravity="right"
+      android:maxLines="1"
+      android:text=""
+      android:textColor="@color/bottom_dialog_textPrimaryColor"
+      android:textSize="20sp"
+      tools:text="تایتل"/>
+  </RelativeLayout>
 
-    <android.support.v7.widget.AppCompatButton
-        android:id="@+id/btn_positive"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@android:id/message"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/bottom_dialog_button_background_blue"
-        android:gravity="center"
-        android:minWidth="88dp"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp"
-        android:text="positive"
-        android:textAllCaps="false"
-        android:textColor="#FFF"
-        android:textSize="14sp" />
+  <android.support.v7.widget.AppCompatTextView
+    android:id="@android:id/message"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="20dp"
+    android:layout_marginLeft="24dp"
+    android:layout_marginRight="24dp"
+    android:layout_alignParentRight="true"
+    android:layout_below="@+id/headerLayout"
+    android:gravity="right"
+    android:inputType="text|textMultiLine"
+    android:layoutDirection="rtl"
+    android:lineSpacingMultiplier="1.1"
+    android:text=""
+    android:textColor="@color/bottom_dialog_textPrimaryColor"
+    android:textDirection="rtl"
+    android:textSize="16sp"
+    tools:text="@tools:sample/lorem/random"/>
 
-    <android.support.v7.widget.AppCompatButton
-        android:id="@+id/btn_cancel"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:layout_alignTop="@+id/btn_positive"
-        android:layout_below="@android:id/message"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_toRightOf="@id/btn_positive"
-        android:background="@android:color/transparent"
-        android:gravity="center"
-        android:minWidth="88dp"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp"
-        android:text="Negative"
-        android:textAllCaps="false"
-        android:textColor="@color/bottom_dialog_colorAccent"
-        android:textSize="14sp" />
+  <android.support.v7.widget.AppCompatButton
+    android:id="@+id/btn_positive"
+    android:layout_width="wrap_content"
+    android:layout_height="40dp"
+    android:layout_marginTop="32dp"
+    android:layout_marginLeft="8dp"
+    android:layout_alignParentLeft="true"
+    android:layout_below="@android:id/message"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:background="@drawable/bottom_dialog_button_background_blue"
+    android:gravity="center"
+    android:minWidth="88dp"
+    android:text=""
+    android:textAllCaps="false"
+    android:textColor="#FFF"
+    android:textSize="14sp"
+    tools:text="positive"/>
+
+  <android.support.v7.widget.AppCompatButton
+    android:id="@+id/btn_cancel"
+    android:layout_width="wrap_content"
+    android:layout_height="40dp"
+    android:layout_marginLeft="8dp"
+    android:layout_marginRight="8dp"
+    android:layout_alignTop="@+id/btn_positive"
+    android:layout_below="@android:id/message"
+    android:layout_toRightOf="@id/btn_positive"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:background="@android:color/transparent"
+    android:gravity="center"
+    android:minWidth="88dp"
+    android:text=""
+    android:textAllCaps="false"
+    android:textColor="@color/bottom_dialog_colorAccent"
+    android:textSize="14sp"
+    tools:text="Negative"/>
 </RelativeLayout>
