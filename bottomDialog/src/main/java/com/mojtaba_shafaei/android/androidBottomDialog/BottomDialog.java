@@ -14,6 +14,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.AppCompatDelegate;
+import android.text.SpannableString;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -123,12 +124,6 @@ public final class BottomDialog extends android.support.design.widget.BottomShee
       }
     }
 
-    if (builder.contentTextResId != null) {
-      content.setText(builder.contentTextResId);
-    } else if (builder.contentText != null) {
-      content.setText(builder.contentText);
-    }
-
     if (builder.contentTypeface != null) {
       content.setTypeface(builder.contentTypeface);
     } else if (builder.defaultTypeface != null) {
@@ -138,6 +133,12 @@ public final class BottomDialog extends android.support.design.widget.BottomShee
     if (builder.contentTextSize != null) {
       content.setTextSize(TypedValue.COMPLEX_UNIT_PX,
           getResources().getDimension(builder.contentTextSize));
+    }
+
+    if (builder.contentTextResId != null) {
+      content.setText(builder.contentTextResId);
+    } else if (builder.contentText != null) {
+      content.setText(builder.contentText);
     }
 
     //<editor-fold desc="positive Button">
@@ -247,7 +248,9 @@ public final class BottomDialog extends android.support.design.widget.BottomShee
   @Deprecated
   @Override
   public void show(FragmentManager manager, String tag) {
-    super.show(manager, tag);
+    if (manager.findFragmentByTag(tag) == null) {
+      super.show(manager, tag);
+    }
   }
 
   public BottomDialog show(AppCompatActivity activity) {
@@ -256,7 +259,9 @@ public final class BottomDialog extends android.support.design.widget.BottomShee
   }
 
   public BottomDialog show(Fragment fragment) {
-    show(fragment.getFragmentManager(), TAG);
+    if (fragment.getFragmentManager() != null) {
+      show(fragment.getFragmentManager(), TAG);
+    }
     return this;
   }
 
@@ -297,7 +302,7 @@ public final class BottomDialog extends android.support.design.widget.BottomShee
 
     //<editor-fold desc="Content">
     private Typeface contentTypeface;
-    private String contentText;
+    private CharSequence contentText;
     @StringRes
     private Integer contentTextResId;
     @DimenRes
@@ -436,7 +441,7 @@ public final class BottomDialog extends android.support.design.widget.BottomShee
       return this;
     }
 
-    public Builder withContent(String content, Typeface typeface, @DimenRes int textSize) {
+    public Builder withContent(CharSequence content, Typeface typeface, @DimenRes int textSize) {
       this.contentText = content;
       this.contentTypeface = typeface;
       this.contentTextSize = textSize;
@@ -450,7 +455,7 @@ public final class BottomDialog extends android.support.design.widget.BottomShee
       return this;
     }
 
-    public Builder withContent(String content, @DimenRes int textSize) {
+    public Builder withContent(CharSequence content, @DimenRes int textSize) {
       this.contentText = content;
       this.contentTextSize = textSize;
       return this;
@@ -463,7 +468,7 @@ public final class BottomDialog extends android.support.design.widget.BottomShee
       return this;
     }
 
-    public Builder withContent(String content, Typeface typeface) {
+    public Builder withContent(CharSequence content, Typeface typeface) {
       this.contentText = content;
       this.contentTypeface = typeface;
       return this;
@@ -475,7 +480,7 @@ public final class BottomDialog extends android.support.design.widget.BottomShee
       return this;
     }
 
-    public Builder withContent(String content) {
+    public Builder withContent(CharSequence content) {
       this.contentText = content;
       return this;
     }
