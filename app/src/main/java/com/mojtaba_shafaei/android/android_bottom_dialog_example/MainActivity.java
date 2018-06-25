@@ -1,5 +1,6 @@
 package com.mojtaba_shafaei.android.android_bottom_dialog_example;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
@@ -49,6 +50,17 @@ public class MainActivity extends AppCompatActivity {
                 .withPositiveBackgroundType(BottomDialog.GREY)
                 .withNegativeBackgroundType(BottomDialog.TRANSPARENT)
                 .withDefaultTypeface(typeface)
+                .withDialogInterface(new DialogInterface() {
+                  @Override
+                  public void cancel() {
+                    Log.d(TAG, "cancelled: ");
+                  }
+
+                  @Override
+                  public void dismiss() {
+                    Log.d(TAG, "dismissed: ");
+                  }
+                })
                 .build()
                 .show(MainActivity.this);
           } catch (Exception e) {

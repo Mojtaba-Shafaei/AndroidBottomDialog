@@ -1,5 +1,6 @@
 package com.mojtaba_shafaei.android.androidBottomDialog;
 
+import android.content.DialogInterface;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -14,7 +15,6 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.AppCompatDelegate;
-import android.text.SpannableString;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -204,6 +204,22 @@ public final class BottomDialog extends android.support.design.widget.BottomShee
   }
 
   @Override
+  public void onCancel(DialogInterface dialog) {
+    if (builder.dialogInterface != null) {
+      builder.dialogInterface.cancel();
+    }
+    super.onCancel(dialog);
+  }
+
+  @Override
+  public void onDismiss(DialogInterface dialog) {
+    if (builder.dialogInterface != null) {
+      builder.dialogInterface.dismiss();
+    }
+    super.onDismiss(dialog);
+  }
+
+  @Override
   public void onActivityCreated(Bundle arg0) {
     super.onActivityCreated(arg0);
     Window window = getDialog().getWindow();
@@ -269,7 +285,7 @@ public final class BottomDialog extends android.support.design.widget.BottomShee
   public void onPause() {
     super.onPause();
     //dismiss dialog to prevent <<NullPointerException>>
-    dismissAllowingStateLoss();
+    dismiss();
     //
 
   }
@@ -329,6 +345,7 @@ public final class BottomDialog extends android.support.design.widget.BottomShee
     private boolean hiddenNegativeButton = false;
 
     private ButtonCallback positiveButtonCallback, negativeButtonCallback;
+    private DialogInterface dialogInterface;
 
     /////////////////////////////////////////////
     /////////// methods
@@ -589,6 +606,11 @@ public final class BottomDialog extends android.support.design.widget.BottomShee
 
     public Builder withHiddenNegativeButton(boolean isHidden) {
       this.hiddenNegativeButton = isHidden;
+      return this;
+    }
+
+    public Builder withDialogInterface(DialogInterface dialogInterface) {
+      this.dialogInterface = dialogInterface;
       return this;
     }
 
