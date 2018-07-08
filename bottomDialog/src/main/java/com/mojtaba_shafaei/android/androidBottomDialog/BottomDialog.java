@@ -378,6 +378,12 @@ public final class BottomDialog extends android.support.design.widget.BottomShee
     /**/
 
     //<editor-fold desc="Icon">
+
+    /**
+     * @apiNote It's prefer to use {@link #withIcon(int)} in Android below 5
+     * @param drawableRes
+     * @return
+     */
     public Builder withIcon(@DrawableRes int drawableRes) {
       this.iconResId = drawableRes;
       return this;

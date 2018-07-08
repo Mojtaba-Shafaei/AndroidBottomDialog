@@ -21,8 +21,8 @@
       android:layout_marginRight="24dp"
       android:layout_alignParentRight="true"
       android:layout_centerVertical="true"
-      android:src="@drawable/ic_android_dark"
-      android:visibility="visible"/>
+      android:visibility="visible"
+      tools:src="@tools:sample/avatars"/>
 
     <android.support.v7.widget.AppCompatTextView
       android:id="@android:id/title"
@@ -37,8 +37,9 @@
       android:maxLines="1"
       android:text=""
       android:textColor="@color/bottom_dialog_textPrimaryColor"
+      android:textDirection="rtl"
       android:textSize="20sp"
-      tools:text="تایتل"/>
+      tools:text="@tools:sample/lorem"/>
   </RelativeLayout>
 
   <android.support.v7.widget.AppCompatTextView
@@ -58,7 +59,7 @@
     android:textColor="@color/bottom_dialog_textPrimaryColor"
     android:textDirection="rtl"
     android:textSize="16sp"
-    tools:text="@tools:sample/lorem/random"/>
+    tools:text="@tools:sample/lorem"/>
 
   <android.support.v7.widget.AppCompatButton
     android:id="@+id/btn_positive"
