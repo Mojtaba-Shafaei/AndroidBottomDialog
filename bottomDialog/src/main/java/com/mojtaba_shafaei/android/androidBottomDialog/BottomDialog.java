@@ -285,7 +285,7 @@ public final class BottomDialog extends android.support.design.widget.BottomShee
   public void onPause() {
     super.onPause();
     //dismiss dialog to prevent <<NullPointerException>>
-    dismiss();
+    dismissAllowingStateLoss();
     //
 
   }
