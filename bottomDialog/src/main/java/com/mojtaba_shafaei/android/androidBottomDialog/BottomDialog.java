@@ -308,7 +308,7 @@ public final class BottomDialog extends android.support.design.widget.BottomShee
     private Integer iconResId;
     private Drawable icon;
     private Typeface titleTypeFace;
-    private String titleText;
+    private CharSequence titleText;
     @StringRes
     private Integer titleTextResId;
     @DimenRes
@@ -326,7 +326,7 @@ public final class BottomDialog extends android.support.design.widget.BottomShee
 
     //</editor-fold>
 
-    private String positiveText, negativeText;
+    private CharSequence positiveText, negativeText;
     @StringRes
     private Integer positiveTextResId, negativeTextResId;
 
@@ -405,7 +405,7 @@ public final class BottomDialog extends android.support.design.widget.BottomShee
       return this;
     }
 
-    public Builder withTitle(String title, Typeface typeface, @DimenRes int textSize) {
+    public Builder withTitle(CharSequence title, Typeface typeface, @DimenRes int textSize) {
       this.titleText = title;
       this.titleTypeFace = typeface;
       this.titleTextSize = textSize;
@@ -420,7 +420,7 @@ public final class BottomDialog extends android.support.design.widget.BottomShee
       return this;
     }
 
-    public Builder withTitle(String title, Typeface typeface) {
+    public Builder withTitle(CharSequence title, Typeface typeface) {
       this.titleText = title;
       this.titleTypeFace = typeface;
       return this;
@@ -434,7 +434,7 @@ public final class BottomDialog extends android.support.design.widget.BottomShee
       return this;
     }
 
-    public Builder withTitle(String title, @DimenRes int textSize) {
+    public Builder withTitle(CharSequence title, @DimenRes int textSize) {
       this.titleText = title;
       this.titleTextSize = textSize;
       return this;
@@ -447,7 +447,7 @@ public final class BottomDialog extends android.support.design.widget.BottomShee
       return this;
     }
 
-    public Builder withTitle(String title) {
+    public Builder withTitle(CharSequence title) {
       this.titleText = title;
       return this;
     }
@@ -525,13 +525,13 @@ public final class BottomDialog extends android.support.design.widget.BottomShee
       return this;
     }
 
-    public Builder withPositiveText(String positiveText, @ColorRes int colorRes) {
+    public Builder withPositiveText(CharSequence positiveText, @ColorRes int colorRes) {
       this.positiveText = positiveText;
       this.positiveTextColorResId = colorRes;
       return this;
     }
 
-    public Builder withPositiveText(String positiveText) {
+    public Builder withPositiveText(CharSequence positiveText) {
       this.positiveText = positiveText;
       return this;
     }
@@ -546,7 +546,7 @@ public final class BottomDialog extends android.support.design.widget.BottomShee
       return this;
     }
 
-    public Builder withNegativeText(String negativeText, @ColorRes int colorRes) {
+    public Builder withNegativeText(CharSequence negativeText, @ColorRes int colorRes) {
       this.negativeText = negativeText;
       this.negativeTextColorResId = colorRes;
       return this;
@@ -557,7 +557,7 @@ public final class BottomDialog extends android.support.design.widget.BottomShee
       return this;
     }
 
-    public Builder withNegativeText(String negativeText) {
+    public Builder withNegativeText(CharSequence negativeText) {
       this.negativeText = negativeText;
       return this;
     }
