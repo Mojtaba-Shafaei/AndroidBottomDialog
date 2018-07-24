@@ -4,17 +4,6 @@ import android.content.DialogInterface;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.support.annotation.ColorRes;
-import android.support.annotation.DimenRes;
-import android.support.annotation.DrawableRes;
-import android.support.annotation.IntDef;
-import android.support.annotation.Nullable;
-import android.support.annotation.StringRes;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.app.AppCompatDelegate;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,6 +12,19 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import androidx.annotation.ColorRes;
+import androidx.annotation.DimenRes;
+import androidx.annotation.DrawableRes;
+import androidx.annotation.IntDef;
+import androidx.annotation.Nullable;
+import androidx.annotation.StringRes;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
+import androidx.core.content.ContextCompat;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
+import com.google.android.material.button.MaterialButton;
 import java.lang.annotation.Documented;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -31,7 +33,7 @@ import java.lang.annotation.RetentionPolicy;
  * Created by mojtaba on 8/15/17.
  */
 
-public final class BottomDialog extends android.support.design.widget.BottomSheetDialogFragment {
+public final class BottomDialog extends BottomSheetDialogFragment {
 
   private Builder builder;
   private final String TAG = "BottomDialog";
@@ -43,20 +45,6 @@ public final class BottomDialog extends android.support.design.widget.BottomShee
   @Documented
   @IntDef({LTR, RTL})
   public @interface Direction {
-
-  }
-
-  public static final int TRANSPARENT = 0;
-  public static final int BLUE = 1;
-  public static final int GREY = 2;
-  public static final int GREEN = 3;
-  public static final int ORANGE = 4;
-  public static final int RED = 5;
-
-  @IntDef({TRANSPARENT, BLUE, GREY, GREEN, ORANGE, RED})
-  @Retention(RetentionPolicy.SOURCE)
-  @Documented
-  public @interface ButtonColor {
 
   }
 
@@ -78,8 +66,8 @@ public final class BottomDialog extends android.support.design.widget.BottomShee
         .inflate(builder.direction == RTL ? R.layout.bottom_dialog_rtl : R.layout.bottom_dialog_ltr,
             container, false);
     TextView title, content;
-    Button positiveBtn;
-    Button negativeBtn;
+    MaterialButton positiveBtn;
+    MaterialButton negativeBtn;
     ImageView icon;
 
     ViewGroup header = root.findViewById(R.id.headerLayout);
@@ -153,12 +141,6 @@ public final class BottomDialog extends android.support.design.widget.BottomShee
           .setTextColor(ContextCompat.getColor(getContext(), builder.positiveTextColorResId));
     }
 
-    if (builder.positiveButtonBackgroundType != null) {
-      positiveBtn.setBackgroundResource(getResourceFor(builder.positiveButtonBackgroundType));
-    } else if (builder.positiveBackgroundResId != null) {
-      positiveBtn.setBackgroundResource(builder.positiveBackgroundResId);
-    }
-
     positiveBtn.setOnClickListener(view -> {
       dismiss();
       if (builder.positiveButtonCallback != null) {
@@ -179,17 +161,15 @@ public final class BottomDialog extends android.support.design.widget.BottomShee
         negativeBtn.setText(builder.negativeText);
       }
 
-      if (builder.negativeButtonBackgroundType != null) {
-        negativeBtn.setBackgroundResource(getResourceFor(builder.negativeButtonBackgroundType));
-      } else if (builder.negativeBackgroundResId != null) {
+      if (builder.negativeBackgroundResId != null) {
         negativeBtn.setBackgroundResource(builder.negativeBackgroundResId);
       }
 
-      if (builder.negativeTextColorResId != null) {
+      /*if (builder.negativeTextColorResId != null) {
         negativeBtn
             .setTextColor(ContextCompat.getColor(getContext(), builder.negativeTextColorResId));
       }
-
+*/
       negativeBtn.setOnClickListener(view -> {
         dismiss();
         if (builder.negativeButtonCallback != null) {
@@ -225,31 +205,6 @@ public final class BottomDialog extends android.support.design.widget.BottomShee
     Window window = getDialog().getWindow();
     if (window != null) {
       window.setWindowAnimations(R.style.bottom_dialog_DialogAnimation);
-    }
-  }
-
-  private int getResourceFor(Integer type) {
-    switch (type) {
-      case TRANSPARENT:
-        return R.drawable.bottom_dialog_button_background_transparent;
-
-      case BLUE:
-        return R.drawable.bottom_dialog_button_background_blue;
-
-      case GREY:
-        return R.drawable.bottom_dialog_button_background_gray;
-
-      case GREEN:
-        return R.drawable.bottom_dialog_button_background_green;
-
-      case ORANGE:
-        return R.drawable.bottom_dialog_button_background_orange;
-
-      case RED:
-        return R.drawable.bottom_dialog_button_background_red;
-
-      default:
-        return R.drawable.bottom_dialog_button_background_blue;
     }
   }
 
@@ -334,7 +289,6 @@ public final class BottomDialog extends android.support.design.widget.BottomShee
     @ColorRes
     private Integer positiveBackgroundResId, negativeBackgroundResId;
 
-    private Integer positiveButtonBackgroundType, negativeButtonBackgroundType;
     //</editor-fold>
 
     //<editor-fold desc="Color of positive & Negative button text">
@@ -381,8 +335,6 @@ public final class BottomDialog extends android.support.design.widget.BottomShee
 
     /**
      * @apiNote It's prefer to use {@link #withIcon(int)} in Android below 5
-     * @param drawableRes
-     * @return
      */
     public Builder withIcon(@DrawableRes int drawableRes) {
       this.iconResId = drawableRes;
@@ -566,11 +518,6 @@ public final class BottomDialog extends android.support.design.widget.BottomShee
     /////////////////////////////////////////////
 
     //<editor-fold desc="PositiveBackground">
-    public Builder withPositiveBackgroundType(@ButtonColor int backgroundType) {
-      this.positiveButtonBackgroundType = backgroundType;
-      return this;
-    }
-
     public Builder withPositiveBackground(@DrawableRes int drawableRes) {
       this.positiveBackgroundResId = drawableRes;
       return this;
@@ -581,11 +528,6 @@ public final class BottomDialog extends android.support.design.widget.BottomShee
     /////////////////////////////////////////////
 
     //<editor-fold desc="NegativeBackground">
-    public Builder withNegativeBackgroundType(@ButtonColor int backgroundType) {
-      this.negativeButtonBackgroundType = backgroundType;
-      return this;
-    }
-
     public Builder withNegativeBackground(@DrawableRes int drawableRes) {
       this.negativeBackgroundResId = drawableRes;
       return this;

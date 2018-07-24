@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.style.ForegroundColorSpan;
@@ -47,8 +47,6 @@ public class MainActivity extends AppCompatActivity {
                 .withHiddenNegativeButton(false)
                 .withNegativeText("انصراف")
                 .withPositiveText("بله.حذف میکنم.")
-                .withPositiveBackgroundType(BottomDialog.GREY)
-                .withNegativeBackgroundType(BottomDialog.TRANSPARENT)
                 .withDefaultTypeface(typeface)
                 .withDialogInterface(new DialogInterface() {
                   @Override
@@ -98,8 +96,6 @@ public class MainActivity extends AppCompatActivity {
                 .withHiddenNegativeButton(false)
                 .withNegativeText(spanBuilderCancel)
                 .withPositiveText(spanBuilderPositive)
-                .withPositiveBackgroundType(BottomDialog.GREY)
-                .withNegativeBackgroundType(BottomDialog.TRANSPARENT)
                 .withDefaultTypeface(typeface)
                 .withDialogInterface(new DialogInterface() {
                   @Override
@@ -129,10 +125,8 @@ public class MainActivity extends AppCompatActivity {
                 .withContent("Do you remove this ... ?", typeface, R.dimen.contentTextSize)
 
                 .withPositiveText("Yes.Remove it.", android.R.color.white)
-                .withPositiveBackgroundType(BottomDialog.BLUE)
 
                 .withNegativeText("Cancel", R.color.bottom_dialog_textSecondaryColor)
-                .withNegativeBackgroundType(BottomDialog.TRANSPARENT)
                 .build()
                 .show(MainActivity.this);
           } catch (Exception e) {

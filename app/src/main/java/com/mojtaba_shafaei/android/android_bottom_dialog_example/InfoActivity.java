@@ -1,7 +1,7 @@
 package com.mojtaba_shafaei.android.android_bottom_dialog_example;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.widget.TextView;
 
 public class InfoActivity extends AppCompatActivity {

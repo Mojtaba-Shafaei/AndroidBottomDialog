@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-  <style name="bottom_dialog_DialogAnimation">
+  <style name="bottom_dialog_DialogAnimation" parent="Theme.MaterialComponents.Light">
     <item name="android:windowEnterAnimation">@anim/bottom_dialog_anim_slide_up</item>
     <item name="android:windowExitAnimation">@anim/bottom_dialog_anim_slide_down</item>
   </style>

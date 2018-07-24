@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="wrap_content"
@@ -13,7 +14,7 @@
     android:layout_height="wrap_content"
     android:layout_alignParentTop="true">
 
-    <android.support.v7.widget.AppCompatImageView
+    <androidx.appcompat.widget.AppCompatImageView
       android:id="@+id/icon"
       android:layout_width="40dp"
       android:layout_height="40dp"
@@ -24,7 +25,7 @@
       android:visibility="visible"
       tools:src="@tools:sample/avatars"/>
 
-    <android.support.v7.widget.AppCompatTextView
+    <androidx.appcompat.widget.AppCompatTextView
       android:id="@android:id/title"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
@@ -40,7 +41,7 @@
       tools:text="@tools:sample/lorem"/>
   </RelativeLayout>
 
-  <android.support.v7.widget.AppCompatTextView
+  <androidx.appcompat.widget.AppCompatTextView
     android:id="@android:id/message"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -55,42 +56,42 @@
     android:textSize="16sp"
     tools:text="@tools:sample/lorem"/>
 
-  <android.support.v7.widget.AppCompatButton
+  <com.google.android.material.button.MaterialButton
     android:id="@+id/btn_positive"
+    style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
     android:layout_width="wrap_content"
-    android:layout_height="40dp"
+    android:layout_height="wrap_content"
     android:layout_marginTop="32dp"
     android:layout_marginRight="8dp"
     android:layout_alignParentRight="true"
     android:layout_below="@android:id/message"
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
-    android:background="@drawable/bottom_dialog_button_background_blue"
     android:gravity="center"
     android:minWidth="88dp"
     android:text=""
     android:textAllCaps="true"
     android:textColor="#FFF"
     android:textSize="14sp"
+    app:backgroundTint="#0288D1"
+    app:backgroundTintMode="src_atop"
     tools:text="positive"/>
 
-  <android.support.v7.widget.AppCompatButton
+  <com.google.android.material.button.MaterialButton
     android:id="@+id/btn_cancel"
+    style="@style/Widget.MaterialComponents.Button.TextButton.Dialog"
     android:layout_width="wrap_content"
-    android:layout_height="40dp"
+    android:layout_height="wrap_content"
     android:layout_marginLeft="8dp"
     android:layout_marginRight="8dp"
     android:layout_alignTop="@+id/btn_positive"
     android:layout_below="@android:id/message"
     android:layout_toLeftOf="@id/btn_positive"
-    android:paddingLeft="16dp"
-    android:paddingRight="16dp"
-    android:background="@android:color/transparent"
     android:gravity="center"
-    android:minWidth="88dp"
     android:text=""
     android:textAllCaps="true"
     android:textColor="@color/bottom_dialog_colorAccent"
     android:textSize="14sp"
+    app:rippleColor="#03A9F4"
     tools:text="Negative"/>
 </RelativeLayout>
