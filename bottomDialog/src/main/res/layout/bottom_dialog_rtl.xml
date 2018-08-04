@@ -96,6 +96,5 @@
     android:textAllCaps="false"
     android:textColor="@color/bottom_dialog_colorAccent"
     android:textSize="14sp"
-    app:rippleColor="#03A9F4"
     tools:text="Negative"/>
 </RelativeLayout>
